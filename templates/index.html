@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Gray Calculator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <h1>🧮 Gray Calculator</h1>
+
+    <form method="POST">
+
+        <input
+            type="number"
+            step="any"
+            name="num1"
+            placeholder="Enter First Number"
+            required>
+
+        <input
+            type="number"
+            step="any"
+            name="num2"
+            placeholder="Enter Second Number"
+            required>
+
+        <select name="operation">
+
+            <option value="+">Addition (+)</option>
+
+            <option value="-">Subtraction (-)</option>
+
+            <option value="*">Multiplication (*)</option>
+
+            <option value="/">Division (/)</option>
+
+        </select>
+
+        <button type="submit">
+            Calculate
+        </button>
+
+    </form>
+
+    {% if result is not none %}
+
+    <div class="result">
+
+        Result: {{ result }}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
